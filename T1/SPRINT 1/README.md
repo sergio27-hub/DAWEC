@@ -32,7 +32,7 @@ console.log(`indefinido: ${indefinido}`, typeof indefinido);
 ```
 ## Pruebas 
 
-![ejercicio1](image/1.gif)
+![ejercicio1](Image\1.gif)
 
 ##
 ## Ejercicio 2: Operaciones Aritméticas
@@ -68,7 +68,7 @@ console.log(`Modulo:${modulo}`);
 
 ## Pruebas 
 
-![ejercicio2](image/2.gif)
+![ejercicio2](Image\2.gif)
 ##
 ## Ejercicio 3: Comparaciones
 
@@ -101,7 +101,7 @@ console.log(`variable3 es menor o igual que variable2: ${menor}`);
 
 ## Pruebas
 
-![ejercicio3](image/3.gif)
+![ejercicio3](Image\3.gif)
 
 ##
 ## Ejercicio 4: Estructuras Condicionales
@@ -146,7 +146,7 @@ console.log(`variable3 es menor o igual que variable2: ${menor}`);
 ```
 ## Pruebas 
 
-![ejercicio4](image/4.gif)
+![ejercicio4](Image\4.gif)
 
 ##
 ## Ejercicio 5: Bucles
@@ -182,4 +182,4 @@ Bucle2();
 ```
 ## Pruebas 
 
-![ejercicio5](image/5.gif)
+![ejercicio5](Image\5.gif)
