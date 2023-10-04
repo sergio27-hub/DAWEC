@@ -32,6 +32,7 @@ console.log(`indefinido: ${indefinido}`, typeof indefinido);
 ```
 ## Pruebas 
 
+![Prueba ejercicio 1](image/Captura%20de%20pantalla_20221128_192036.png)
 
 
 ## Ejercicio 2: Operaciones Aritméticas
@@ -41,12 +42,62 @@ console.log(`indefinido: ${indefinido}`, typeof indefinido);
 - Declara dos variables numéricas.
 - Realiza y muestra en la consola las operaciones de suma, resta, multiplicación, división y módulo entre estas variables.
 
+## Solucion del Problema 
+
+```javascript
+//Objetivo: Realizar operaciones aritméticas básicas
+var numero1 = 3;
+var numero2 = 30;
+
+
+    let suma  = numero1 + numero2;
+    let resta = numero2 - numero1;
+    let multiplicacion = numero1 * numero2;
+    let division = numero2 / numero1;
+    let modulo = numero1 % numero2;
+    
+
+
+console.log(`Suma:${suma}`);
+console.log(`resta:${resta}`);
+console.log(`multiplicacion:${multiplicacion}`);
+console.log(`division:${division}`);
+console.log(`Modulo:${modulo}`);
+
+```
+
+## Pruebas 
+
 ## Ejercicio 3: Comparaciones
 
 **Objetivo:** Comprender los operadores de comparación y cómo funcionan.
 
 - Declara tres variables con diferentes valores.
 - Utiliza operadores de comparación para comparar estas variables entre sí y muestra los resultados en la consola.
+
+## Solucion del Problema 
+
+```javascript
+let variable1 = 256;
+let variable2 = '256';
+let variable3 = 300;
+
+var comparacion1 = variable1 == variable2;
+var comparacion2 = variable1 === variable2;
+var mayor  = variable3 >= variable1;
+var comparacion3 = variable1 !== variable2;
+var menor  = variable3 <= variable2;
+
+
+
+console.log(`variable1 es igual a variable2: ${comparacion2}`);
+console.log(`variable1 es distinto de variable2: ${comparacion3}`);
+console.log(`variable3 es mayor que variable1: ${mayor}`);
+console.log(`variable3 es menor o igual que variable2: ${menor}`);
+
+```
+
+## Pruebas
 
 ## Ejercicio 4: Estructuras Condicionales
 
@@ -57,6 +108,41 @@ console.log(`indefinido: ${indefinido}`, typeof indefinido);
 - Si es menor, muestra otro mensaje.
 - Si es exactamente 10, muestra un mensaje indicativo.
 
+## Solucion del Problema 
+
+
+```javascript
+//const readline = require('readline');
+//const rl = readline.createInterface({
+  //input: process.stdin,
+  //output: process.stdout
+//});
+
+//function HacerPregunta(){
+        //for (let i = 0 ; i<10 ; i++){    
+        //rl.question("que numero desea elegir : " , (numerorecogido) => {
+            //numerorecogido = parseInt(numerorecogido);
+            const numero = prompt("ingresa un numero :");
+            const numerorecogido = parseInt(numero);
+                if (numerorecogido > 10){
+                    console.log("\nel numero introducido es mayor que 10\n");
+                
+                } else if (numerorecogido < 10){
+                    console.log("\n el numero introducido es menor que 10\n")
+
+                } else if (numerorecogido === 10) {
+                    console.log(" \n el numero introducido es igual a 10 \n ")
+                }
+                //HacerPregunta();
+            //}
+    
+    //HacerPregunta();
+
+```
+## Pruebas 
+
+
+
 ## Ejercicio 5: Bucles
 
 **Objetivo:** Implementar bucles para repetir acciones múltiples veces.
@@ -64,3 +150,28 @@ console.log(`indefinido: ${indefinido}`, typeof indefinido);
 - Escribe un bucle que muestre en la consola los números del 1 al 10.
 - Modifica el bucle anterior para mostrar solo los números pares entre 1 y 10.
 
+## Solucion del Problema 
+
+
+```javascript
+//Escribir un bucle que muestre en la consola los números del 1 al 10
+function Bucle1(){
+for (let i= 1 ; i<=10; i++){
+    console.log(i);
+}
+}
+
+//Modificar el bucle anterior para mostrar solo los números pares entre 1 y 10.
+function Bucle2 (){
+    for (let i= 1 ; i<=10; i++){
+        if (i % 2 === 0){
+            console.log(i);
+        }
+    }
+}
+Bucle1();
+console.log("\nModificar el bucle anterior para mostrar solo los números pares entre 1 y 10\n");
+Bucle2();
+
+```
+## Pruebas 
