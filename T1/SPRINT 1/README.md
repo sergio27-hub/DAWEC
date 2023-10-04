@@ -11,7 +11,7 @@
 - Utiliza `console.log` para mostrar el valor y el tipo de cada variable.
 
 ## Solucion del Problema 
- 
+
 En este ejercicio, declararemos varias variables de diferentes tipos de datos y luego utilizaremos `console.log` para mostrar sus valores y tipos en la consola.
 
 ```javascript
@@ -28,6 +28,9 @@ console.log(`booleano: ${boleann}`, typeof boleann);
 console.log(`objeto:`, objecto, typeof objecto);
 console.log(`nulo: ${nulo}`, typeof nulo);
 console.log(`indefinido: ${indefinido}`, typeof indefinido);
+
+```
+## Pruebas 
 
 
 
