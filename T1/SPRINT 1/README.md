@@ -2,7 +2,7 @@
 
 
 ## ANÁLISIS DEL PROBLEMA.
-
+##
 ## Ejercicio 1: Declaración y Tipos de Datos
 
 **Objetivo:** Familiarizarse con la declaración de variables y la identificación de tipos de datos.
@@ -32,9 +32,9 @@ console.log(`indefinido: ${indefinido}`, typeof indefinido);
 ```
 ## Pruebas 
 
-![Prueba ejercicio 1](image/Captura%20de%20pantalla_20221128_192036.png)
+![ejercicio1](image/1.gif)
 
-
+##
 ## Ejercicio 2: Operaciones Aritméticas
 
 **Objetivo:** Realizar operaciones aritméticas básicas.
@@ -68,6 +68,8 @@ console.log(`Modulo:${modulo}`);
 
 ## Pruebas 
 
+![ejercicio1](image/2.gif)
+##
 ## Ejercicio 3: Comparaciones
 
 **Objetivo:** Comprender los operadores de comparación y cómo funcionan.
@@ -99,6 +101,9 @@ console.log(`variable3 es menor o igual que variable2: ${menor}`);
 
 ## Pruebas
 
+![ejercicio1](image/3.gif)
+
+##
 ## Ejercicio 4: Estructuras Condicionales
 
 **Objetivo:** Implementar estructuras condicionales para controlar el flujo del programa.
@@ -141,8 +146,9 @@ console.log(`variable3 es menor o igual que variable2: ${menor}`);
 ```
 ## Pruebas 
 
+![ejercicio1](image/4.gif)
 
-
+##
 ## Ejercicio 5: Bucles
 
 **Objetivo:** Implementar bucles para repetir acciones múltiples veces.
@@ -175,3 +181,5 @@ Bucle2();
 
 ```
 ## Pruebas 
+
+![ejercicio1](image/5.gif)
