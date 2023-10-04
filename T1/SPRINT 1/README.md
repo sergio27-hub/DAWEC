@@ -68,7 +68,7 @@ console.log(`Modulo:${modulo}`);
 
 ## Pruebas 
 
-![ejercicio2](Image\2.gif)
+![ejercicio2](Image/2.gif)
 ##
 ## Ejercicio 3: Comparaciones
 
