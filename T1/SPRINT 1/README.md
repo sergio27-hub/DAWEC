@@ -10,6 +10,27 @@
 - Declara una variable para cada tipo de dato: Number, String, Boolean, Object, Null y Undefined.
 - Utiliza `console.log` para mostrar el valor y el tipo de cada variable.
 
+## Solucion del Problema 
+ 
+En este ejercicio, declararemos varias variables de diferentes tipos de datos y luego utilizaremos `console.log` para mostrar sus valores y tipos en la consola.
+
+```javascript
+let nombre = "sergio";
+let numero = 123;
+let boleann = true;
+let objecto = {nombre: 'sergio', edad: 21};
+let nulo = null;
+const indefinido = undefined;
+
+console.log(`nombre: ${nombre}`, typeof nombre);
+console.log(`numero: ${numero}`, typeof numero);
+console.log(`booleano: ${boleann}`, typeof boleann);
+console.log(`objeto:`, objecto, typeof objecto);
+console.log(`nulo: ${nulo}`, typeof nulo);
+console.log(`indefinido: ${indefinido}`, typeof indefinido);
+
+
+
 ## Ejercicio 2: Operaciones Aritméticas
 
 **Objetivo:** Realizar operaciones aritméticas básicas.
