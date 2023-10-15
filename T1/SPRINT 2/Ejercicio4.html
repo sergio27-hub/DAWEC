@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cambio de Estilos al Pasar el Ratón</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-image: linear-gradient(
+                to bottom right,
+                #ff0202 0%,
+                #ff9100 20%,
+                #fd5400 40%,
+                #ffe346 60%,
+                #a66805 100%
+              );
+            
+              background-size: 300% 300%;
+            
+              animation: movimiento 5s linear infinite alternate;
+              
+            }
+            
+            @keyframes movimiento {
+              from{
+                background-position: 0% 0%;
+              }
+            
+              to{
+                background-position: 50% 50%;
+              }
+              
+            }
+        
+        .div-box {
+            width: 300px;
+            height: 100px;
+            display: inline-table ;
+            background-color: #eee;
+            border: 1px solid #000000;
+            margin: 60px;
+            padding: 80px;
+            text-align: center;
+            transition: background-color 0.4s, color 0.4s;
+            cursor: pointer;
+            margin-right: 5em;
+        }
+
+        div{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h1 {
+            color: rgb(0, 0, 0);
+            position: relative;
+            text-align: center;
+            font-size: 3em;
+
+        }
+    </style>
+</head>
+<body>
+    <h1> Cambio de Estilos </h1>
+    <div class="div-box" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        Div 1
+    </div>
+    <div class="div-box" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        Div 2
+    </div>
+    <div class="div-box" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        Div 3
+    </div>
+    <div class="div-box" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        Div 4
+    </div>
+    <script src="Ejercicio4.js"></script>
+</body>
+</html>

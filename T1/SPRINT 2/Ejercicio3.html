@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir lista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 18px;
+            color: #333;
+            margin: 5px 0;
+            position: relative;
+        }
+        li:hover{
+            color : red
+        }
+    </style>
+</head>
+<body>
+    <h1>Añadir a la Lista</h1>
+    <label for="nuevoElemento">Nuevo Elemento:</label>
+    <input type="text" id="nuevoElemento">
+    <button onclick="agregarALista()">Añadir a la Lista</button>
+    <ul id="miLista"></ul>
+    <script src="Ejercicio3.js"></script>
+</body>
+</html>
