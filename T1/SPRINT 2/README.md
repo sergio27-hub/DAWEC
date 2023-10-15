@@ -1,6 +1,6 @@
 # Boletín de Ejercicios - Sprint 2
 
-## ANÁLISIS DEL PROBLEMA. ![Logo de Markdown](https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.vecteezy.com%2Fpng%2F9663676-icono-lapiz-png-transparente&psig=AOvVaw2NddnoEifYL6TN1FZX1rdH&ust=1697499031454000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOiBh-ea-YEDFQAAAAAdAAAAABAJ)
+## ANÁLISIS DEL PROBLEMA. <img src="Images/lapiz.png" alt="Logito" width="60" align="left">
 ##
 
 ### Ejercicio 1: Cambio de Color con Botón
