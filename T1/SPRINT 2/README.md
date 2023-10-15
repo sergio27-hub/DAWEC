@@ -1,8 +1,8 @@
 # Boletín de Ejercicios - Sprint 2
-
-## ANÁLISIS DEL PROBLEMA. <img src="Images/lapiz.png" alt="Logito" width="60" align="left">
-##
-
+<div style="clear: both;">
+<img src="Images/lapiz.png" alt="Logito" width="60" align="left">
+ ## ANÁLISIS DEL PROBLEMA.
+</div>
 ### Ejercicio 1: Cambio de Color con Botón
 
 - Crear una página web que contenga un botón etiquetado "Cambiar color".
