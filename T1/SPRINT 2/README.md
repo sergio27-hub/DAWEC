@@ -1,6 +1,6 @@
 # Boletín de Ejercicios - Sprint 2
 
- ## ANÁLISIS DEL PROBLEMA.<img src="Images/lapiz.png" alt="Logito" width="60" align="left">
+ ## ANÁLISIS DEL PROBLEMA <img src="Images/lapiz.png" alt="Logito" width="60" align="left">
 
 ### Ejercicio 1: Cambio de Color con Botón
 
@@ -73,7 +73,7 @@ function CambiarColor(){
     return Randomcolor;
 }
 ```
-
+#### Documento HTML
 ~~~html
 <!DOCTYPE html>
 
@@ -107,3 +107,330 @@ function CambiarColor(){
 </html>
 ~~~
 ### Ejercicio 2
+
+```javascript 
+
+function calcularArea() {
+    var ancho = parseFloat(document.getElementById('ancho').value);
+    var alto = parseFloat(document.getElementById('alto').value);
+    
+    if (isNaN(ancho) || isNaN(alto)) {
+        alert('Por favor, ingrese valores numéricos para el ancho y el alto.');
+        return;
+    }
+    
+    var area = ancho * alto;
+    
+    document.getElementById('resultado').innerHTML = 'El área del rectángulo es: ' + area;
+}
+
+```
+#### Documento HTML
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=}, initial-scale=1.0">
+    <title>Calcular área</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 80px;
+            padding: 5px;
+        }
+        button {
+            margin-top: 3em;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b50401;
+        }
+        #resultado {
+            margin: 20px;
+            font-size: 18px;
+            color: #333;
+        } 
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Área de Rectángulo</h1>
+
+    <label for="ancho">Ancho:</label>
+    
+    <input type="number" id="ancho">
+    
+    <br>
+    <label for="alto">Alto:</label>
+    <input type="number" id="alto">
+    <br>
+    
+    <button onclick="calcularArea()">Calcular Área</button>
+    
+    <p id="resultado"></p>
+
+    <script src="Ejercicio2.js"></script>
+    
+</body>
+</html>
+~~~
+
+### Ejercicio 3
+
+```javascript
+function agregarALista() {
+    var nuevoElemento = document.getElementById('nuevoElemento').value;
+
+    var listItem = document.createElement('li');
+    
+    listItem.textContent = nuevoElemento;
+    
+
+    document.getElementById('miLista').appendChild(listItem);
+    
+    document.getElementById('nuevoElemento').value = '';
+}
+```
+#### Documento HTML
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir lista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 18px;
+            color: #333;
+            margin: 5px 0;
+            position: relative;
+        }
+        li:hover{
+            color : red
+        }
+    </style>
+</head>
+<body>
+    <h1>Añadir a la Lista</h1>
+    <label for="nuevoElemento">Nuevo Elemento:</label>
+    <input type="text" id="nuevoElemento">
+    <button onclick="agregarALista()">Añadir a la Lista</button>
+    <ul id="miLista"></ul>
+    <script src="Ejercicio3.js"></script>
+</body>
+</html>
+~~~
+
+### Ejercicio 4
+```javascript
+function cambiarEstilos(div) {
+    div.style.backgroundColor = '#007bff';
+    div.style.color = '#fff';
+}
+
+function restaurarEstilos(div) {
+    div.style.backgroundColor = '#eee';
+    div.style.color = '#000';
+}
+```
+#### Documento HTML
+~~~html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cambio de Estilos al Pasar el Ratón</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-image: linear-gradient(
+                to bottom right,
+                #ff0202 0%,
+                #ff9100 20%,
+                #fd5400 40%,
+                #ffe346 60%,
+                #a66805 100%
+              );
+            
+              background-size: 300% 300%;
+            
+              animation: movimiento 5s linear infinite alternate;
+              
+            }
+            
+            @keyframes movimiento {
+              from{
+                background-position: 0% 0%;
+              }
+            
+              to{
+                background-position: 50% 50%;
+              }
+              
+            }
+        
+        .div-box {
+            width: 300px;
+            height: 100px;
+            display: inline-table ;
+            background-color: #eee;
+            border: 1px solid #000000;
+            margin: 60px;
+            padding: 80px;
+            text-align: center;
+            transition: background-color 0.4s, color 0.4s;
+            cursor: pointer;
+            margin-right: 5em;
+        }
+
+        div{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h1 {
+            color: rgb(0, 0, 0);
+            position: relative;
+            text-align: center;
+            font-size: 3em;
+
+        }
+    </style>
+</head>
+<body>
+    <h1> Cambio de Estilos </h1>
+    <div class="div-box" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        Div 1
+    </div>
+    <div class="div-box" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        Div 2
+    </div>
+    <div class="div-box" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        Div 3
+    </div>
+    <div class="div-box" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        Div 4
+    </div>
+    <script src="Ejercicio4.js"></script>
+</body>
+</html>
+~~~
+
+```javascript
+document.addEventListener("click", function (event) {
+    var clickedElement = event.target;
+    var xpath = getXPath(clickedElement);
+    alert("XPath del elemento clickeado:\n\n" + xpath);
+});
+
+function getXPath(element) {
+    var path = '';
+    while (element && element.nodeType === Node.ELEMENT_NODE) {
+        var selector = element.tagName.toLowerCase();
+        if (element.id) {
+            selector += '#' + element.id;
+            path = '/' + selector + path;
+            break; // No es necesario seguir subiendo
+        } else {
+            var siblings = Array.from(element.parentNode.children);
+            var sameTagSiblings = siblings.filter(function (e) {
+                return e.tagName === element.tagName;
+            });
+            if (sameTagSiblings.length > 1) {
+                var index = sameTagSiblings.indexOf(element) + 1;
+                selector += ':nth-child(' + index + ')';
+            }
+        }
+        path = '/' + selector + path;
+        element = element.parentNode;
+    }
+    return path;
+}
+```
+#### Documento HTML
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón e Iframe</title>
+</head>
+<body>
+    
+    <button id="mainButton">Botón Principal</button>
+    
+    <iframe id="myIframe" width="200" height="200" frameborder="0" src="Iframe.html"></iframe>
+    </iframe>
+    <script src="Ejercicio5.js"></script>
+    
+    
+</body>
+</html>
+~~~
+
+## Pruebas <img src="Images/lupa.png" alt="Logito" width="60" align="left">
+
+### Ejercicio 1 :
+![ejercicio1](Images/EJER1.gif)
+### Ejercicio 2 :
+![ejercicio1](Images/EJER2.gif)
+
+### Ejercicio 3 :
+![ejercicio1](Images/EJER3.gif)
+
+### Ejercicio 4 :
+![ejercicio1](Images/EJER4.gif)
+
+### Ejercicio 5 :
+![ejercicio1](Images/EJER5.gif)
