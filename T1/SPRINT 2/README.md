@@ -462,13 +462,24 @@ function getXPath(element) {
 ### Ejercicio 1 :
 ![ejercicio 1](Images/EJER1.gif)
 ### Ejercicio 2 :
+<<<<<<< HEAD
 ![ejercicio 2](Images/EJER2.gif)
+=======
+![ejercicio2](Images/EJER2.gif)
+>>>>>>> 30867590b6943859a9a9f682993a7575d01b7874
 
 ### Ejercicio 3 :
 ![ejercicio3](Images/EJER3.gif)
 
 ### Ejercicio 4 :
+<<<<<<< HEAD
 ![ejercicio 4](Images/EJER4.gif)
 
 ### Ejercicio 5 :
 ![ejercicio 5](Images/EJER5.gif)
+=======
+![ejercicio4](Images/EJER4.gif)
+
+### Ejercicio 5 :
+![ejercicio5](Images/EJER5.gif)
+>>>>>>> 30867590b6943859a9a9f682993a7575d01b7874
