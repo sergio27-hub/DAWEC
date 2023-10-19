@@ -367,35 +367,61 @@ function restaurarEstilos(div) {
 ~~~
 
 ```javascript
-document.addEventListener("click", function (event) {
-    var clickedElement = event.target;
-    var xpath = getXPath(clickedElement);
-    alert("XPath del elemento clickeado:\n\n" + xpath);
+const iframe = document.getElementById('myIframe');
+
+iframe.addEventListener('load', function() {
+    const iframeDocument = iframe.contentDocument;
+
+    iframeDocument.addEventListener("click", function(event) {
+        const clickedElement = event.target;
+
+        const iframeXPath = getXPath(clickedElement);
+        alert("XPath del elemento en el iframe:\n" + iframeXPath);
+    });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("click", function(event) {
+        const clickedElement = event.target;
+
+        const mainXPath = getXPath(clickedElement);
+
+        
+        alert("XPath del elemento en la página principal:\n" + mainXPath);
+    });
+});
+
+
 function getXPath(element) {
-    var path = '';
-    while (element && element.nodeType === Node.ELEMENT_NODE) {
-        var selector = element.tagName.toLowerCase();
+    if (!element) return '';
+
+    const parts = [];
+    while (element && element !== document.body) {
+        let part = element.localName;
         if (element.id) {
-            selector += '#' + element.id;
-            path = '/' + selector + path;
-            break; // No es necesario seguir subiendo
+            part += `[@id="${element.id}"]`;
         } else {
-            var siblings = Array.from(element.parentNode.children);
-            var sameTagSiblings = siblings.filter(function (e) {
-                return e.tagName === element.tagName;
-            });
-            if (sameTagSiblings.length > 1) {
-                var index = sameTagSiblings.indexOf(element) + 1;
-                selector += ':nth-child(' + index + ')';
+            const siblings = element.parentNode ? element.parentNode.children : [];
+            if (siblings.length > 1) {
+                let count = 0;
+                for (let i = 0; i < siblings.length; i++) {
+                    const sibling = siblings[i];
+                    if (sibling.localName === element.localName) {
+                        count++;
+                    }
+                    if (sibling === element) {
+                        part += `[${count + 1}]`;
+                        break;
+                    }
+                }
             }
         }
-        path = '/' + selector + path;
+        parts.unshift(part);
         element = element.parentNode;
     }
-    return path;
+    return parts.length ? '/' + parts.join('/') : null;
 }
+
 ```
 #### Documento HTML
 ~~~html
@@ -410,27 +436,39 @@ function getXPath(element) {
     
     <button id="mainButton">Botón Principal</button>
     
-    <iframe id="myIframe" width="200" height="200" frameborder="0" src="Iframe.html"></iframe>
+    <iframe id="myIframe" width="200" height="200" frameborder="0" srcdoc="<!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Contenido Iframe</title>
+        </head>
+        <body>
+            <button id='iframeButton'>Botón Iframe</button>
+        </body>
+        </html>">
     </iframe>
     <script src="Ejercicio5.js"></script>
-    
-    
 </body>
 </html>
 ~~~
 
 ## Pruebas <img src="Images/lupa.png" alt="Logito" width="60" align="left">
 
+### -> Plan de Pruebas :
+
+![excel plan de pruebas](Images/Plan.png)
+
 ### Ejercicio 1 :
-![ejercicio1](Images/EJER1.gif)
+![ejercicio 1](Images/EJER1.gif)
 ### Ejercicio 2 :
-![ejercicio1](Images/EJER2.gif)
+![ejercicio 2](Images/EJER2.gif)
 
 ### Ejercicio 3 :
-![ejercicio1](Images/EJER3.gif)
+![ejercicio3](Images/EJER3.gif)
 
 ### Ejercicio 4 :
-![ejercicio1](Images/EJER4.gif)
+![ejercicio 4](Images/EJER4.gif)
 
 ### Ejercicio 5 :
-![ejercicio1](Images/EJER5.gif)
+![ejercicio 5](Images/EJER5.gif)

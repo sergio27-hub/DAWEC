@@ -1,29 +1,54 @@
-document.addEventListener("click", function (event) {
-    var clickedElement = event.target;
-    var xpath = getXPath(clickedElement);
-    alert("XPath del elemento clickeado:\n\n" + xpath);
+const iframe = document.getElementById('myIframe');
+
+iframe.addEventListener('load', function() {
+    const iframeDocument = iframe.contentDocument;
+
+    iframeDocument.addEventListener("click", function(event) {
+        const clickedElement = event.target;
+
+        const iframeXPath = getXPath(clickedElement);
+        alert("XPath del elemento en el iframe:\n" + iframeXPath);
+    });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("click", function(event) {
+        const clickedElement = event.target;
+
+        const mainXPath = getXPath(clickedElement);
+
+        
+        alert("XPath del elemento en la página principal:\n" + mainXPath);
+    });
+});
+
+
 function getXPath(element) {
-    var path = '';
-    while (element && element.nodeType === Node.ELEMENT_NODE) {
-        var selector = element.tagName.toLowerCase();
+    if (!element) return '';
+
+    const parts = [];
+    while (element && element !== document.body) {
+        let part = element.localName;
         if (element.id) {
-            selector += '#' + element.id;
-            path = '/' + selector + path;
-            break; // No es necesario seguir subiendo
+            part += `[@id="${element.id}"]`;
         } else {
-            var siblings = Array.from(element.parentNode.children);
-            var sameTagSiblings = siblings.filter(function (e) {
-                return e.tagName === element.tagName;
-            });
-            if (sameTagSiblings.length > 1) {
-                var index = sameTagSiblings.indexOf(element) + 1;
-                selector += ':nth-child(' + index + ')';
+            const siblings = element.parentNode ? element.parentNode.children : [];
+            if (siblings.length > 1) {
+                let count = 0;
+                for (let i = 0; i < siblings.length; i++) {
+                    const sibling = siblings[i];
+                    if (sibling.localName === element.localName) {
+                        count++;
+                    }
+                    if (sibling === element) {
+                        part += `[${count + 1}]`;
+                        break;
+                    }
+                }
             }
         }
-        path = '/' + selector + path;
+        parts.unshift(part);
         element = element.parentNode;
     }
-    return path;
+    return parts.length ? '/' + parts.join('/') : null;
 }

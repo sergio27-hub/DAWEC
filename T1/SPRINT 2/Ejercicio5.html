@@ -9,10 +9,18 @@
     
     <button id="mainButton">Botón Principal</button>
     
-    <iframe id="myIframe" width="200" height="200" frameborder="0" src="Iframe.html"></iframe>
+    <iframe id="myIframe" width="200" height="200" frameborder="0" srcdoc="<!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Contenido Iframe</title>
+        </head>
+        <body>
+            <button id='iframeButton'>Botón Iframe</button>
+        </body>
+        </html>">
     </iframe>
     <script src="Ejercicio5.js"></script>
-    
-    
 </body>
 </html>
