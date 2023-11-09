@@ -173,3 +173,5 @@ function estudiantesDestacadosPorAsignatura(estudiantes, asignatura) {
     function mostrarEstudiantesAprobados() {
         console.log(estudiantesAprobados(estudiantes));
     }
+
+    console.log(mostrarMejoraNotasBeca());

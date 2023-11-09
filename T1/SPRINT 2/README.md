@@ -1,6 +1,6 @@
 # Boletín de Ejercicios - Sprint 2
 
- ## ANÁLISIS DEL PROBLEMA <img src="Images/lapiz.png" alt="Logito" width="60" align="left">
+ ## ANÁLISIS DEL PROBLEMA <img src="Images/lapiz.png" alt="Logito" width="60" allign="left">
 
 ### Ejercicio 1: Cambio de Color con Botón
 
@@ -453,7 +453,7 @@ function getXPath(element) {
 </html>
 ~~~
 
-## Pruebas <img src="Images/lupa.png" alt="Logito" width="60" align="left">
+## Pruebas <img src="Images/lupa.png" alt="Logito" width="60" allign="left">
 
 ### -> Plan de Pruebas :
 

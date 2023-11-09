@@ -1,6 +1,6 @@
 # Boletín de Ejercicios - Sprint 3
 
-## ANÁLISIS DEL PROBLEMA ![Logito](Images/lapiz.png)
+ ## ANÁLISIS DEL PROBLEMA <img src="Images/lapiz.png" alt="Logito" width="60" allign="left">
 
 ## Ejercicio 1: Filtrado de propiedades de un objeto
 
@@ -758,3 +758,30 @@ function estudiantesDestacadosPorAsignatura(estudiantes, asignatura) {
 ~~~
 
 
+## Pruebas <img src="Images/lupa.png" alt="Logito" width="60" allign="left">
+
+### -> Plan de Pruebas :
+
+![excel plan de pruebas](Images/prueba.png)
+
+- Ejercicio 6
+![excel plan de pruebas](Images/prueba1.png)
+
+### Ejercicio 1 :
+![ejercicio 1](Images/eje1.gif)
+### Ejercicio 2 :
+![ejercicio 2](Images/eje2.gif)
+
+### Ejercicio 3 :
+![ejercicio 3](Images/eje3.gif)
+
+### Ejercicio 4 :
+
+![ejercicio 4](Images/eje4.gif)
+
+### Ejercicio 5 :
+![ejercicio 5](Images/eje5.gif)
+
+### Ejercicio 6 :
+![ejercicio 6 part 1 ](Images/eje6.1.gif)
+![ejercicio 6 part 2 ](Images/eje6.2.gif)
