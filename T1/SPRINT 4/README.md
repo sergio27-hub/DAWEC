@@ -1,6 +1,6 @@
 # Boletín de Ejercicios - Sprint 3
 
- ## ANÁLISIS DEL PROBLEMA <img src="Images/lapiz.png" alt="Logito" width="60" allign="left">
+ ## ANÁLISIS DEL PROBLEMA <img src="images/lapiz.png" alt="Logito" width="60" allign="left">
 
 ## Ejercicio 1: Información Básica del Pokémon
 
@@ -1212,16 +1212,16 @@ async function addMovieToList(movieId) {
 </body>
 </html>
 ~~~
-## Pruebas <img src="Images/lupa.png" alt="Logito" width="60" allign="left">
+## Pruebas <img src="images/lupa.png" alt="Logito" width="60" allign="left">
 
 ### -> Plan de Pruebas :
 
-![excel plan de pruebas](Images/prueba1-2.png)
-![excel plan de pruebas](Images/prueba3.png)
-![excel plan de pruebas](Images/prueba4.png)
+![excel plan de pruebas](images/prueba1-2.png)
+![excel plan de pruebas](images/prueba3.png)
+![excel plan de pruebas](images/prueba4.png)
 
 - Ejercicio 5
-![excel plan de pruebas](Images/prueba-ejer5.png)
+![excel plan de pruebas](images/prueba-ejer5.png)
 
 ### Ejercicio 1 :
 ![ejercicio 1](images/eje1.gif)
