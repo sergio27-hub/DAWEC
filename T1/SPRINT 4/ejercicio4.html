@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Películas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-container {
+            margin-bottom: 20px;
+        }
+        
+        #results {
+            margin-bottom: 20px;
+        }
+        
+        .pagination-button {
+            padding: 8px;
+            margin: 0 4px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .pagination-button:hover {
+            background-color: #2980b9;
+        }
+        .movie {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 30px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .movie img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .movie:hover img {
+            transform: scale(1.1);
+            opacity: 0.3;
+        }
+        
+        .movie .movie-title,
+        .movie .movie-overview {
+            display: none;
+            color: aliceblue;
+        }
+        
+        .movie:hover .movie-title,
+        .movie:hover .movie-overview {
+            display: block;
+            position: absolute;
+            bottom: 40px; /* Ajustado para dejar espacio para el botón */
+            left: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+            font-size: 0.9em;
+            max-height: 120px; /* Ajustado para reducir la altura máxima */
+            overflow: auto;
+        }
+        #results{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+         #results {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Explorador de Películas</h1>
+        <div class="search-container">
+            <label for="keyword">Palabra clave:</label>
+            <input type="text" id="keyword" placeholder="Buscar películas por palabra clave">
+            <label for="genre">Género:</label>
+            <select id="genre">
+                <option value=""> - </option>
+            </select>
+            <button id="searchButton">Buscar</button>
+        </div>
+        <div id="results"></div>
+        <button id="prevButton">Anterior</button>
+        <button id="nextButton">Siguiente</button>
+    </div>
+
+    <script src="ejercicio4.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIX</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="ejercicio5.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>MOVIX</h1>
+    </header>
+
+    <nav>
+        <a href="https://www.themoviedb.org/settings/api" target="_blank">Consultar API Key</a>
+        <button id="setApiKeyButton">Establecer API Key</button>
+        <button id="loginButton">CONEXION A  TMDB</button>
+        <button id="logoutButton" style="display: none;">Cerrar Sesión</button>
+        <button id="recoverListButton" style="display: none;">Recuperar Lista</button>
+    </nav>
+
+    <fieldset style="display: none;" id="createListSection">
+        <legend>Crear Lista de Peliculas Favoritas</legend>
+        <form id="createListForm">
+            <label for="listName">Nombre de la Lista:</label>
+            <input type="text" id="listName" name="listName" required><br><br>
+
+            <label for="listDescription">Descripción de la Lista:</label>
+            <textarea id="listDescription" name="listDescription" required></textarea><br><br>
+
+            <button type="submit">Crear Lista</button>
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>Buscar Películas</legend>
+        <label for="keyword">Título:</label>
+        <input type="text" id="keyword" name="keyword">
+        
+        <label for="genre">Género:</label>
+        <select id="genre" name="genre">
+            <option value="">x</option>
+            <!-- Las opciones de género se cargarán desde la API -->
+        </select>
+        
+        <button id="searchButton">Buscar</button>
+    </fieldset>
+
+    <fieldset id="favoritesFieldset" style="display: none;">
+        <legend>Favoritas</legend>
+        <div id="favorite-results">
+            <!-- Los resultados de los favoritos se mostrarán aquí -->
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Peliculas encontradas</legend>
+        <div id="results">
+            <!-- Los resultados de la búsqueda se mostrarán aquí -->
+        </div>
+        <button id="prevButton">Anterior</button>
+        <button id="nextButton">Siguiente</button>
+    </fieldset>
+    <footer>
+        <p>&copy; 2023 MOVIX.INC</p>
+    </footer>
+</body>
+</html>

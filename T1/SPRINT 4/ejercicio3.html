@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio3</title>
+    <script src="ejercicio3.js" defer></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s ease;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            transition: color 0.5s ease;
+        }
+
+        #search-container {
+            text-align: center;
+            margin: 20px;
+            transition: margin 0.5s ease;
+        }
+
+        #pokemon-input {
+            padding: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        #search-button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #evolutions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        #inputtime{
+
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            color: #888;
+        }
+
+        .pokemon-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pokemon-card img {
+            max-width: 100px;
+            max-height: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .abilities-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .abilities-list li {
+            margin: 5px 0;
+        }
+
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+        }
+
+        .loading {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <h2>Evoluciones y Habilidades de Pokémon</h2>
+    <div id = "inputtime">
+        <input type="text" id="pokemon-input" placeholder="Nombre del Pokémon">
+        <button onclick="displayEvolutionChain()">Buscar</button>
+    </div>
+    <div id="evolutions"></div>
+
+    <div id="abilityModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="abilityDetails"></p>
+        </div>
+    </div>
+</body>
+</html>

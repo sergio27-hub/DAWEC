@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+          }
+          
+          label {
+            display: block;
+            margin-bottom: 5px;
+          }
+          
+          input {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+          }
+          
+          button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+          }
+          
+          button:hover {
+            background-color: #45a049;
+          }
+          
+          table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+          }
+          
+          th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+          }
+          
+          th {
+            background-color: #4CAF50;
+            color: white;
+          }
+          
+    </style>
+</head>
+<body>
+    <label for="pokemon1">Primer Pokémon:</label>
+    <input type="text" id="pokemon1" placeholder="Nombre del Pokémon 1">
+    
+    <label for="pokemon2">Segundo Pokémon:</label>
+    <input type="text" id="pokemon2" placeholder="Nombre del Pokémon 2">
+    
+    <button onclick="compararPokemon()">COMPARE</button>
+
+    <div id="comparativaInfo">
+    </div>
+
+    <script src="Ejercicio2.js"></script>
+</body>
+</html>
