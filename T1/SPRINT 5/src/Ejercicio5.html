@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pokedex">
+      <img class="imagepoke" src="../images/poke.png" alt="pokedex">
+        <div class="screen">
+            <div class="search-container">
+                <label for="pokemonInput"></label>
+                <input type="text" id="pokemonInput" placeholder="Nombre o ID">
+                <button onclick="buscarPokemon()">Buscar</button>
+            </div>
+            <div id="pokemonInfo" class="hidden">
+                <!-- Información del Pokémon se mostrará aquí -->
+                <button onclick="buscarNuevoPokemon()">Buscar Nuevo Pokémon</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/Ejercicio5.js"></script>
+</body>
+</html>

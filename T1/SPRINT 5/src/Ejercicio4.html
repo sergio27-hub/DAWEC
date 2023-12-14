@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Tareas</title>
+  <link rel="stylesheet" href="Eje4.css">
+</head>
+<body>
+
+<div id="app">
+  <div class="sidebar">
+    <ul>
+      <li><a href="#" onclick="mostrarTodas()">Todas las Tareas</a></li>
+      <li><a href="#" onclick="mostrarImportantes()">Importantes</a></li>
+      <li><a href="#" onclick="mostrarCompletadas()">Completadas</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div id="sistemaTareas">
+      <h1>Sistema de Tareas</h1>
+      <label for="tareaInput">Nueva Tarea:</label>
+      <input type="text" id="tareaInput" placeholder="Escribe tu nueva tarea">
+      <button onclick="agregarTareaDesdeInput()">Agregar Tarea</button>
+    </div>
+
+    <ul id="listaTareas">
+      <!-- Las tareas se mostrarán aquí dinámicamente -->
+    </ul>
+  </div>
+</div>
+
+<script src="dist/Ejercicio4.js"></script>
+</body>
+</html>

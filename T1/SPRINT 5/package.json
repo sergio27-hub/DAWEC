@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build": "tsc -w"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
+    "@types/jquery": "^3.5.29",
+    "@types/node": "^20.10.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1"
+  }
+}

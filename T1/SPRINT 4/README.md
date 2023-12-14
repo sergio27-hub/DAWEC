@@ -1,4 +1,4 @@
-# Boletín de Ejercicios - Sprint 3
+# Boletín de Ejercicios - Sprint 4
 
  ## ANÁLISIS DEL PROBLEMA <img src="images/lapiz.png" alt="Logito" width="60" allign="left">
 
