@@ -1,0 +1,51 @@
+.todo-app {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.tareas-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.tareas-lista li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.tareas-lista li.completada {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.tareas-lista li input {
+  margin-right: 8px;
+}
+
+.tareas-lista li button {
+  margin-left: 8px;
+  cursor: pointer;
+  border: none;
+  background-color: #f44336;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+button {
+  margin-left: 8px;
+  cursor: pointer;
+  border: none;
+  background-color: #f44336;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+

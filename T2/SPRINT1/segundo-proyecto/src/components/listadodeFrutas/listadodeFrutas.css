@@ -1,0 +1,19 @@
+/* ListaDeFrutas/ListaDeFrutas.css */
+.frutas-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .frutas-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .frutas-imagen {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  
