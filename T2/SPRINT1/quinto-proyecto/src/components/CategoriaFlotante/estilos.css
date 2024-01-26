@@ -1,0 +1,28 @@
+.categorias-flotantes {
+    position: fixed;
+    top: 30%;
+    right: 60px;
+    transform: translateY(-50%);
+    background-color: #000000;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .categoria-flotante {
+    margin-bottom: 2px;
+  }
+  
+  .categoria-flotante span {
+    margin-right: 50px;
+  }
+  
+  button {
+    background-color: #fd6f44;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  

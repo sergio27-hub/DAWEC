@@ -1,11 +1,11 @@
 import React from 'react';
-import Contador from '../components/contadordeClicks/index.jsx';
+import TareasApp from '../components/GestordeTareas/index.jsx';
 
 const App = () => {
   return (
-    <div>
-      <h1>Mi Aplicación React</h1>
-      <Contador />
+    <div className='background'>
+      <h1 style={{textAlign : 'center', color: 'red' }}>APP DE TAREAS</h1>
+      <TareasApp/>
     </div>
   );
 };
