@@ -94,3 +94,531 @@ Carga las tareas guardadas cuando la aplicación se inicia.</ol>
 
 
 ## Solucion del Problema 
+## Ejercicio 1: Hola Mundo en React y Componente con Props
+```javascript
+/*helloworld/index.jsx*/
+import React from 'react';
+
+const HolaMundo = () => {
+  return (
+    <div style={{ textAlign: 'center', margin: '20px' }}>
+      <h1 style={{ color: '#333' }}>¡Hola, Mundo!</h1>
+    </div>
+  );
+}
+
+export default HolaMundo;
+```
+```javascript
+/*Saludo/index.jsx*/
+import React from 'react';
+
+const Saludo = ({ nombre }) => {
+  return (
+    <div style={{ textAlign: 'center', margin: '10px' }}>
+      {nombre ? (
+        <p style={{ fontSize: '18px', color: '#555' }}>Hola, {nombre}</p>
+      ) : (
+        <p style={{ fontSize: '18px', color: '#555' }}>¡Hola! Ingresa tu nombre</p>
+      )}
+    </div>
+  );
+}
+
+export default Saludo;
+```
+```javascript
+/*App.jsx*/
+import React, { useState } from 'react';
+import HolaMundo from './saludo/index.jsx';
+import Saludo from './helloWorld/index.jsx';
+
+
+
+const App = () => {
+  const [nombre, setNombre] = useState('');
+  const [saludoVisible, setSaludoVisible] = useState(false);
+
+  const handleChange = (event) => {
+    setNombre(event.target.value);
+    setSaludoVisible(false); // Oculta el saludo cuando el nombre cambia
+  }
+
+  const handleSaludo = () => {
+    setSaludoVisible(true); // Muestra el saludo cuando se hace clic en el botón de saludo
+  }
+
+  return (
+    <div style={{ fontFamily: 'Arial, sans-serif', textAlign: 'center' }}>
+      <HolaMundo />
+      <label htmlFor="nombre">Ingresa tu nombre: </label>
+      <input
+        type="text"
+        id="nombre"
+        value={nombre}
+        onChange={handleChange}
+        style={{ margin: '10px' }}
+      />
+      <Saludo nombre={nombre} />
+      <button onClick={handleSaludo} style={{ marginTop: '10px' }}>
+        Saludar
+      </button>
+
+      {saludoVisible && (
+        <p style={{ fontSize: '20px', color: '#007BFF', marginTop: '10px' }}>
+          ¡Hola, {nombre}!
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default App;
+```
+## Ejercicio 2 : Lista de Elementos
+```javascript
+/*Listado de frutas/index.jsx*/
+import React, { useState } from 'react';
+
+const ListaDeFrutas = ({ frutas }) => {
+  const [mostrarFrutas, setMostrarFrutas] = useState(false);
+
+  const handleMostrarFrutas = () => {
+    setMostrarFrutas(!mostrarFrutas);
+  };
+
+  return (
+    <div style={{ fontFamily: 'Arial, sans-serif', textAlign: 'center', marginTop: '20px' }}>
+      <h2>Lista de Frutas</h2>
+      <button
+        style={{
+          padding: '8px 16px',
+          fontSize: '14px',
+          backgroundColor: '#4CAF50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+        }}
+        onClick={handleMostrarFrutas}
+      >
+        {mostrarFrutas ? 'Ocultar Frutas' : 'Mostrar Frutas'}
+      </button>
+
+      {mostrarFrutas && (
+        <ul style={{ listStyleType: 'none', padding: 0, marginTop: '10px' }}>
+          {frutas.map((fruta, index) => (
+            <li
+              key={index}
+              style={{
+                marginBottom: '10px',
+                display: 'flex',
+                alignItems: 'center',
+                border: '1px solid #ddd',
+                padding: '10px',
+                borderRadius: '4px',
+              }}
+            >
+              <img
+                src={fruta.imagen}
+                alt={fruta.nombre}
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  marginRight: '10px',
+                  borderRadius: '50%',
+                }}
+              />
+              <span style={{ fontSize: '16px' }}>{fruta.nombre}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default ListaDeFrutas;
+
+/*app.jsx*/
+import React from 'react';
+import ListaDeFrutas from '../components/listadodeFrutas/index.jsx';
+import manzanaImage from '../assets/imagesFrutas/Manzana.jpeg';
+import platanoImage from '../assets/imagesFrutas/platano.jpeg';
+import naranjaImage from '../assets/imagesFrutas/Naranja.jpeg';
+import uvaImage from '../assets/imagesFrutas/uva.jpeg';
+import fresaImage from '../assets/imagesFrutas/Fresa.jpeg';
+
+const App = () => {
+  const frutas = [
+    { nombre: 'Manzana', imagen: manzanaImage },
+    { nombre: 'Plátano', imagen: platanoImage },
+    { nombre: 'Naranja', imagen: naranjaImage },
+    { nombre: 'Uva', imagen: uvaImage },
+    { nombre: 'Fresa', imagen:  fresaImage },
+  ];
+
+  return (
+    <div style={{ fontFamily: 'Arial, sans-serif', textAlign: 'center' }}>
+      <ListaDeFrutas frutas={frutas} />
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Ejercicio 3: Contador de Clicks
+```javascript
+/*ContadordeClicks/index.jsx*/
+import React, { useState } from 'react';
+import './Contador.css';
+
+const Contador = () => {
+  const [contador, setContador] = useState(0);
+
+  const handleIncrementar = () => {
+    setContador(contador + 1);
+  };
+  const handleReset = () => {
+    setContador(0);
+  };
+
+  return (
+    <div className="contador-container">
+      <h1 className="contador-value">Contador de Clicks: {contador}</h1>
+      <button className="contador-button" onClick={handleIncrementar}>
+        Incrementar
+      </button>
+      <button className="reset-button" onClick={handleReset}>
+          Reset
+      </button>
+      
+    </div>
+  );
+};
+
+export default Contador;
+
+
+/*app.jsx*/
+import React from 'react';
+import Contador from '../components/contadordeClicks/index.jsx';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Mi Aplicación React</h1>
+      <Contador />
+    </div>
+  );
+};
+
+export default App;
+```
+## Ejercicio 4: Aplicación de Tareas
+```javascript
+/*TodoApp/index.jsx*/
+import React, { useState } from 'react';
+import './TodoApp.css';
+
+const TodoApp = () => {
+  const [tareas, setTareas] = useState([]);
+  const [nuevaTarea, setNuevaTarea] = useState('');
+
+  const handleAgregarTarea = () => {
+    if (nuevaTarea.trim() !== '') {
+      setTareas([...tareas, { texto: nuevaTarea, completada: false }]);
+      setNuevaTarea('');
+    }
+  };
+
+  const handleMarcarComoCompletada = (index) => {
+    const nuevasTareas = [...tareas];
+    nuevasTareas[index].completada = !nuevasTareas[index].completada;
+    setTareas(nuevasTareas);
+  };
+
+  const handleEliminarTarea = (index) => {
+    const nuevasTareas = tareas.filter((_, i) => i !== index);
+    setTareas(nuevasTareas);
+  };
+
+  return (
+    <div className="todo-app">
+      <h1>Lista de Tareas</h1>
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Nueva tarea"
+          value={nuevaTarea}
+          onChange={(e) => setNuevaTarea(e.target.value)}
+        />
+        <button onClick={handleAgregarTarea}>Agregar</button>
+      </div>
+      <ul className="tareas-lista">
+        {tareas.map((tarea, index) => (
+          <li key={index} className={tarea.completada ? 'completada' : ''}>
+            <input
+              type="checkbox"
+              checked={tarea.completada}
+              onChange={() => handleMarcarComoCompletada(index)}
+            />
+            <span>{tarea.texto}</span>
+            <button onClick={() => handleEliminarTarea(index)}>Eliminar</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default TodoApp;
+
+
+/*app.jsx*/
+
+import React from 'react';
+import TodoApp from './TodoApp/index.jsx';
+
+const App = () => {
+  return (
+    <div>
+      <h1 style={{textAlign : 'center', color: 'red' }}>TodoApp</h1>
+      <TodoApp/>
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Ejercicio 5: Gestor de Tareas con Estados Complejos y Local Storage
+
+```javascript
+/*GestordeTareas*/
+import React, { useState, useEffect } from 'react';
+import './estilos.css'; 
+import CategoriasFlotantes from '../CategoriaFlotante/index.jsx';
+
+const TareasApp = () => {
+  const [tareas, setTareas] = useState(() => {
+    const tareasGuardadas = localStorage.getItem('tareasApp_tareas');
+    return tareasGuardadas !== null ? JSON.parse(tareasGuardadas) : [];
+  }	);
+  const [categorias, setCategorias] = useState(() => {
+    const categoriasGuardadas = localStorage.getItem('tareasApp_categorias');
+    return categoriasGuardadas !== null ? JSON.parse(categoriasGuardadas) : [];
+  });
+  const [nuevaTarea, setNuevaTarea] = useState('');
+  const [nuevaCategoria, setNuevaCategoria] = useState('');
+  const [filtroCategoria, setFiltroCategoria] = useState('Todas');
+
+  useEffect(() => {
+    const categoriasGuardadas = JSON.parse(localStorage.getItem('tareasApp_categorias') || '[]');
+    const tareasGuardadas = JSON.parse(localStorage.getItem('tareasApp_tareas') || '[]');
+
+    if (categoriasGuardadas.length > 0) {
+      setCategorias(categoriasGuardadas);
+    }
+
+    setTareas(tareasGuardadas);
+  }, []); // Cambiado para que solo se ejecute al montar el componente
+
+  useEffect(() => {
+    localStorage.setItem('tareasApp_categorias', JSON.stringify(categorias));
+  }, [categorias]);
+
+  useEffect(() => {
+    localStorage.setItem('tareasApp_tareas', JSON.stringify(tareas));
+  }, [tareas]);
+
+  const handleAgregarTarea = () => {
+    if (nuevaTarea.trim() !== '') {
+      const nuevaTareaObj = {
+        id: Date.now(),
+        titulo: nuevaTarea,
+        completada: false,
+        categoria: nuevaCategoria || 'General',
+      };
+      setTareas([...tareas, nuevaTareaObj]);
+      setNuevaTarea('');
+      setNuevaCategoria('');
+    }
+  };
+
+  const handleEliminarTarea = (id) => {
+    const nuevasTareas = tareas.filter((t) => t.id !== id);
+    setTareas(nuevasTareas);
+  };
+
+  const handleMarcarComoCompletada = (id) => {
+    const nuevasTareas = tareas.map((t) =>
+      t.id === id ? { ...t, completada: !t.completada } : t
+    );
+    setTareas(nuevasTareas);
+  };
+
+  const handleFiltrarPorCategoria = (categoria) => {
+    setFiltroCategoria(categoria);
+  };
+
+  const handleAgregarCategoria = () => {
+    if (nuevaCategoria.trim() !== '' && !categorias.includes(nuevaCategoria)) {
+      setCategorias([...categorias, nuevaCategoria]);
+      setNuevaCategoria('');
+    }
+  };
+  const handleEliminarCategoria = (categoria) => {
+    const nuevasCategorias = categorias.filter((c) => c !== categoria);
+    setCategorias(nuevasCategorias);
+
+    // También deberías eliminar las tareas asociadas a esa categoría si lo deseas
+    const nuevasTareas = tareas.filter((t) => t.categoria !== categoria);
+    setTareas(nuevasTareas);
+  };
+
+  return (
+    <div className="tareas-app">
+      <CategoriasFlotantes categorias={categorias} handleEliminarCategoria={handleEliminarCategoria} />
+      <h1 className="heading">Lista de Tareas</h1>
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Nueva tarea"
+          value={nuevaTarea}
+          onChange={(e) => setNuevaTarea(e.target.value)}
+          className="input"
+        />
+        <select
+          value={nuevaCategoria}
+          onChange={(e) => setNuevaCategoria(e.target.value)}
+          className="select"
+        >
+          <option value="">Seleccionar Categoría</option>
+          {categorias.map((categoria) => (
+            <option key={categoria} value={categoria}>
+              {categoria}
+            </option>
+          ))}
+        </select>
+        <button onClick={handleAgregarTarea} className="button">
+          Agregar Tarea
+        </button>
+      </div>
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Nueva categoría"
+          value={nuevaCategoria}
+          onChange={(e) => setNuevaCategoria(e.target.value)}
+          className="input"
+        />
+        <button onClick={handleAgregarCategoria} className="button">
+          Agregar Categoría
+        </button>
+      </div>
+      <div className="filtros">
+        <button onClick={() => handleFiltrarPorCategoria('Todas')} className="button-Category">
+          Todas
+        </button>
+        {categorias.map((categoria) => (
+          <button
+            key={categoria}
+            onClick={() => handleFiltrarPorCategoria(categoria)}
+            className="button-Category"
+          >
+            {categoria}
+          </button>
+        ))}
+      </div>
+      <ul className="tareas-lista">
+        {tareas
+          .filter((tarea) => filtroCategoria === 'Todas' || tarea.categoria === filtroCategoria)
+          .map((tarea) => (
+            <li key={tarea.id} className={tarea.completada ? 'completada tarea' : 'tarea'}>
+              <span className="tarea-titulo">{tarea.titulo}</span>
+              <button
+                onClick={() => handleMarcarComoCompletada(tarea.id)}
+                className="button"
+              >
+                {tarea.completada ? 'Desmarcar' : 'Completar'}
+              </button>
+              <button onClick={() => handleEliminarTarea(tarea.id)} className="button">
+                Eliminar
+              </button>
+            </li>
+          ))}
+      </ul>
+    </div>
+  );
+};
+
+export default TareasApp;
+
+
+/*CategoriaFlotante*/
+import React from 'react';
+import './estilos.css';
+
+const CategoriasFlotantes = ({ categorias, handleEliminarCategoria }) => {
+  return (
+    <div className="categorias-flotantes">
+      <h3>Categorías</h3>
+      {categorias.map((categoria) => (
+        <div key={categoria} className="categoria-flotante">
+          <span>{categoria}</span>
+          <button onClick={() => handleEliminarCategoria(categoria)}>Eliminar</button>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default CategoriasFlotantes;
+
+
+/*app.jsx*/
+import React from 'react';
+import TareasApp from '../components/GestordeTareas/index.jsx';
+
+const App = () => {
+  return (
+    <div className='background'>
+      <h1 style={{textAlign : 'center', color: 'red' }}>APP DE TAREAS</h1>
+      <TareasApp/>
+    </div>
+  );
+};
+
+export default App;
+
+```
+
+## Pruebas <img src="Pruebas/lupa.png" alt="Logito" width="60" allign="left">
+### -> Plan de Pruebas :
+
+![excel plan de pruebas](Pruebas/1-2.png)
+
+- Ejercicio 3-4
+![excel plan de pruebas](Pruebas/3-4.png)
+- Ejercicio 5
+![excel plan de pruebas](Pruebas/5.png)
+
+### Ejercicio 1 :
+![ejercicio 1](Pruebas/1.gif)
+### Ejercicio 2 :
+![ejercicio 2](Pruebas/2.gif)
+
+### Ejercicio 3 :
+![ejercicio 3 - 3clicks](Pruebas/3clicks.gif)
+![ejercicio 3 - 15clicks](Pruebas/15clicks.gif)
+![ejercicio 3](Pruebas/57clicks.gif)
+
+### Ejercicio 4 :
+
+![ejercicio 4](Pruebas/4.gif)
+
+### Ejercicio 5 :
+![ejercicio 5 ](Pruebas/5.1.gif)
+![ejercicio 5 ](Pruebas/5.2.gif)

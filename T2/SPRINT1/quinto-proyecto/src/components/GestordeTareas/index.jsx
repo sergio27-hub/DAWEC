@@ -11,6 +11,7 @@ const TareasApp = () => {
     const categoriasGuardadas = localStorage.getItem('tareasApp_categorias');
     return categoriasGuardadas !== null ? JSON.parse(categoriasGuardadas) : [];
   });
+  const [tareaEditando, setTareaEditando] = useState(null);
   const [nuevaTarea, setNuevaTarea] = useState('');
   const [nuevaCategoria, setNuevaCategoria] = useState('');
   const [filtroCategoria, setFiltroCategoria] = useState('Todas');
@@ -36,16 +37,34 @@ const TareasApp = () => {
 
   const handleAgregarTarea = () => {
     if (nuevaTarea.trim() !== '') {
-      const nuevaTareaObj = {
-        id: Date.now(),
-        titulo: nuevaTarea,
-        completada: false,
-        categoria: nuevaCategoria || 'General',
-      };
-      setTareas([...tareas, nuevaTareaObj]);
+      if (tareaEditando) {
+        // Editar la tarea existente
+        const nuevasTareas = tareas.map((t) =>
+          t.id === tareaEditando.id ? { ...t, titulo: nuevaTarea, categoria: nuevaCategoria || 'General' } : t
+        );
+        setTareas(nuevasTareas);
+        setTareaEditando(null); // Limpiar la tarea en edición después de editar
+      } else {
+        // Agregar una nueva tarea
+        const nuevaTareaObj = {
+          id: Date.now(),
+          titulo: nuevaTarea,
+          completada: false,
+          categoria: nuevaCategoria || 'General',
+        };
+        setTareas([...tareas, nuevaTareaObj]);
+      }
+
       setNuevaTarea('');
       setNuevaCategoria('');
     }
+  };
+
+  const handleEditarTarea = (tarea) => {
+    // Al hacer clic en el botón de editar, establecemos la tarea en edición
+    setNuevaTarea(tarea.titulo);
+    setNuevaCategoria(tarea.categoria);
+    setTareaEditando(tarea);
   };
 
   const handleEliminarTarea = (id) => {
@@ -147,6 +166,9 @@ const TareasApp = () => {
               </button>
               <button onClick={() => handleEliminarTarea(tarea.id)} className="button">
                 Eliminar
+              </button>
+              <button onClick={() => handleEditarTarea(tarea)} className="button">
+                Editar
               </button>
             </li>
           ))}
