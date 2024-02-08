@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.15;
+  background-color: rgb(128, 128, 126);
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
+.imagen {
+  margin-top: 30px;
+  width: 100%;
+  border-radius: 10px;
+  border: 10px solid #4e4e4e;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.imagen:hover {
+  transform: scale(1.05); /* Escalar la imagen al pasar el ratón sobre ella */
+}
+
+/* Estilos para el modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 90%; /* Ajustar el ancho máximo del modal */
+  max-height: 90%; /* Ajustar la altura máxima del modal */
+  overflow: auto; /* Permitir desplazamiento si el contenido es demasiado grande */
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: tomato;
+}
+
+.imagen-modal {
+  max-width: 100%;
+  height: auto;
+}

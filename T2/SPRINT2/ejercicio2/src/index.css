@@ -1,0 +1,65 @@
+/* Cronometro.css */
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size:xx-large;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #5e5e5e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+  padding: 0;
+}
+
+.cronometro-container {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding: auto;
+}
+
+.tiempo {
+  font-size: 2em;
+  margin-bottom: 20px;
+  align-items: center;
+  padding: auto;
+  color: greenyellow;
+}
+
+.grande {
+  font-size: 1.5em;
+}
+
+.pequeno {
+  font-size: 0.8em;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+button:disabled {
+  background-color: greenyellow;
+  color: black;
+  cursor: not-allowed;
+}

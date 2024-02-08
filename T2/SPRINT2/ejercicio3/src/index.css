@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #303030;
+  color: #333;
+  padding: 20px;
+
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  padding: auto;
+  list-style: none;
+  text-align: left;
+  margin-top: 50px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li > div {
+  display: flex;
+}
+
+li > div > button {
+  margin-left: 10px;
+  background-color: #cc4b01
+}
+
+
+/* Estilos para tareas completadas */
+.completed {
+  color: red;
+  text-decoration: line-through;
+}
+
+/* Estilos para botones */
+button {
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el formulario de agregar tarea */
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #000000;
+  margin-right: 5px;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-buttons button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.filter-buttons button.active {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
