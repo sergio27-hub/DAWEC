@@ -1,6 +1,6 @@
 import React from 'react';
 import '../index.css';
-import AppTareas from '../components/apptareas/index.jsx';
+import AppTareas from '../components/tareasApp/index.jsx';
 
 function App() {
   return (
