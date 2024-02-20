@@ -1,0 +1,43 @@
+body  {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos específicos para la página de inicio */
+.Inicio {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Estilos específicos para la página de perfil de usuario */
+.PerfilDeUsuario {
+  text-align: center;
+  margin-top: 50px;
+}
+
+nav {
+  color: #000000;
+  padding: 20px 0;
+  text-align:left;
+  margin-top: 10px;
+}
+nav a {
+  text-decoration: none;
+  color: #000000;
+  margin-left: 80px;
+  background-color: bisque;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: blue;
+}
