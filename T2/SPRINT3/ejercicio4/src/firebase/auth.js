@@ -1,5 +1,4 @@
 import { auth } from "./firebase";
-import React, { createContext, useContext, useEffect, useState } from 'react';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -11,7 +10,7 @@ import {
   getAuth,
   updateProfile,
 } from "firebase/auth";
-import { getFirestore, collection, addDoc } from "firebase/firestore";	
+import { getFirestore, collection, addDoc ,doc } from "firebase/firestore";	
 
 
 export const getAuthInstance = () => {
@@ -21,6 +20,7 @@ export const getAuthInstance = () => {
 export const doUpdateProfile = async (profile) => {
   const user = auth.currentUser;
   try {
+    // Solo actualizar displayName y photoURL
     await updateProfile(user, profile);
   } catch (error) {
     console.error("Error updating profile: ", error);
@@ -30,13 +30,14 @@ export const doUpdateProfile = async (profile) => {
 
 export const doCreateUserWithEmailAndPassword = async (email, password, firstName, lastName, phoneNumber, photoURL) => {
   try {
-      const authResult = await createUserWithEmailAndPassword(auth, email, password);
+      const authResult = await createUserWithEmailAndPassword(auth, email, password , firstName, lastName, phoneNumber, photoURL);
       const user = authResult.user;
 
       // Actualizar el perfil del usuario con el nombre, apellido y foto de perfil proporcionados
       await updateProfile(user, {
           displayName: `${firstName} ${lastName}`, // Combina el nombre y apellido en un solo valor para displayName
           photoURL: photoURL, // Asigna la URL de la foto de perfil
+          phoneNumber: phoneNumber,
       });
 
       const db = getFirestore();
