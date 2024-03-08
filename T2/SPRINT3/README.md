@@ -516,12 +516,10 @@ const Login = () => {
 };
 
 export default Login;
-
 /*src/components/auth/register/index.jsx*/
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { doCreateUserWithEmailAndPassword } from "../../../firebase/auth";
-
 
 
 const Register = () => {
@@ -537,18 +535,20 @@ const Register = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e) => {
-      e.preventDefault();
-      setIsSubmitting(true);
-      try {
-          console.log("Valores a enviar:", email, password, firstName, lastName, phoneNumber, photoURL);
-          await doCreateUserWithEmailAndPassword(email, password, firstName, lastName, phoneNumber, photoURL);
-          setSuccessMessage("Usuario registrado exitosamente");
-      } catch (error) {
-          setError(error.message);
-      } finally {
-          navigate("/login");
-      }
-  };
+        e.preventDefault();
+        setIsSubmitting(true);
+        try {
+            console.log("Valores a enviar:", email, password, firstName, lastName, phoneNumber, photoURL);
+            await doCreateUserWithEmailAndPassword(email, password, firstName, lastName, phoneNumber, photoURL);
+            setTimeout(() => {
+                setIsSubmitting(false);
+            }, 3000);
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            navigate("/login");
+        }
+    };
   
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -557,7 +557,6 @@ const Register = () => {
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Registrarse</h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            {successMessage && <div className="text-green-500 mt-8 bg-cyan-950">{successMessage}</div>}
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="firstName" className="sr-only">
@@ -573,7 +572,7 @@ const Register = () => {
                 placeholder="Nombre"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-              />
+                />
             </div>
             <div>
               <label htmlFor="lastName" className="sr-only">
@@ -636,7 +635,7 @@ const Register = () => {
                 placeholder="Número de Teléfono"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-              />
+                />
             </div>
 
             <div>
@@ -650,7 +649,7 @@ const Register = () => {
                 accept="image/*"
                 onChange={(e) => setPhotoURL(URL.createObjectURL(e.target.files[0]))}
                 className="sr-only"
-                />
+              />
               <label htmlFor="photoURL" className="cursor-pointer block w-full px-4 py-2 text-sm text-center text-gray-700 bg-white hover:bg-gray-50 border-gray-300 border rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 {photoURL ? "Cambiar Foto" : "Examinar"}
               </label>
@@ -665,12 +664,12 @@ const Register = () => {
             <button
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
+              >
               Registrarse
             </button>
           </div>
-              {error && <div className="text-red-500 mt-8 bg-cyan-950">{error}</div>}
-              {isSubmitting && <div className="text-blue-500 mt-8 bg-cyan-950">Registrando usuario...</div>}
+            {error && <div className="text-red-500 mt-8 bg-cyan-950">{error}</div>}
+            {isSubmitting && <div className="text-blue-500 mt-8 bg-cyan-950">Registrando usuario...</div>}
         </form>
       </div>
     </div>
@@ -678,6 +677,7 @@ const Register = () => {
 };
 
 export default Register;
+
 /*src/components/auth/userProfile/index.jsx*/
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/authContext/index.jsx";
@@ -799,6 +799,7 @@ const Profile = () => {
 };
 
 export default Profile;
+
 /*src/App.jsx*/
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
@@ -823,8 +824,6 @@ function App() {
 }
 
 export default App;
-
-
 ```
 
 ## Pruebas <img src="Public/lupa.png" alt="Logito" width="60" allign="left">
@@ -839,6 +838,8 @@ export default App;
 ![excel plan de pruebas](Public/IMAGES/3.png)
 - Ejercicio 4
 ![excel plan de pruebas](Public/IMAGES/4.png)
+- Ejercicio 5
+![excel plan de pruebas](Public/IMAGES/5.png)
 
 
 ### Ejercicio 1 :
@@ -852,4 +853,6 @@ export default App;
 ### Ejercicio 4 :
 
 ![ejercicio 4](Public/GIF/4.gif)
-![ejercicio 4.1](Public/GIF/4.1.gif)
+
+### Ejercicio 5 :
+![ejercicio 5 ](Public/GIF/5.gif)
