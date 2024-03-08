@@ -375,8 +375,8 @@ export default Register;
 ### -> Plan de Pruebas :
 
 - Gestion de reserva
-![excel plan de pruebas](Public/IMAGES/1.png)
-![excel plan de pruebas](Public/IMAGES/2.png)
+![excel plan de pruebas](public/IMAGES/1.png)
+![excel plan de pruebas](public/IMAGES/2.png)
 
 ### Gestion de reserva:
-![ejercicio 1](Public/GIF/1.gif)
+![ejercicio 1](public/GIF/1.gif)
