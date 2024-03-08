@@ -1,0 +1,104 @@
+
+.gestion-reservas {
+  font-family: 'Arial', sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra suave alrededor del contenedor */
+  background: #fff; /* Fondo blanco para resaltar el contenido */
+}
+
+.calendar-container {
+  margin-bottom: 20px;
+}
+
+.reservas-container {
+  margin-top: 20px;
+}
+
+.reservas-lista {
+  list-style-type: none;
+  padding: 0;
+}
+
+.reserva-item {
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease; /* Transición suave para la sombra */
+}
+
+.reserva-item:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra más pronunciada al pasar el cursor */
+}
+
+.btn {
+  padding: 5px 10px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s; /* Transición suave para el color de fondo y transformación */
+}
+
+.btn:hover {
+  transform: scale(1.05); /* Efecto de crecimiento al pasar el cursor */
+}
+
+.btn:focus {
+  outline: none; /* Elimina el contorno por defecto en el foco */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4), 0 0 0 4px rgba(0, 123, 255, 0.5); /* Contorno personalizado para el foco */
+}
+
+.btn-reservar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-cancelar {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-modificar {
+  background-color: #ff9800;
+  color: white;
+}
+
+.horarios-disponibles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Estilos adicionales para el calendario */
+.react-calendar {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.react-calendar__tile--now {
+  background-color: #fff8dc;
+  font-weight: bold; /* Resalta la fecha actual */
+}
+
+.react-calendar__tile--active {
+  background-color: #add8e6;
+  font-weight: bold; /* Resalta la fecha seleccionada */
+}
+
+.react-calendar__tile:hover {
+  background-color: #dbebff; /* Cambio sutil al pasar el cursor */
+}
+
+.btn {
+  padding: 5px 10px;
+  margin-left: 10px;
+  margin-top: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s; /* Transición suave para el color de fondo y transformación */
+}	
