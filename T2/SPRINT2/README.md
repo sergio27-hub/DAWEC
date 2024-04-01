@@ -872,33 +872,32 @@ function App() {
 export default App;
 ```
 
-## Pruebas <img src="Public/lupa.png" alt="Logito" width="60" allign="left">
+## Pruebas <img src="public/lupa.png" alt="Logito" width="60" allign="left">
 ### -> Plan de Pruebas :
 
 - Ejercicio 1
-![excel plan de pruebas](Public/IMAGES/1.png)
+![excel plan de pruebas](public/IMAGES/1.png)
 
 - Ejercicio 2
-![excel plan de pruebas](Public/IMAGES/2.png)
+![excel plan de pruebas](public/IMAGES/2.png)
 - Ejercicio 3
-![excel plan de pruebas](Public/IMAGES/3.png)
+![excel plan de pruebas](public/IMAGES/3.png)
 - Ejercicio 4
-![excel plan de pruebas](Public/IMAGES/4.png)
+![excel plan de pruebas](public/IMAGES/4.png)
 - Ejercicio 5
-![excel plan de pruebas](Public/IMAGES/5.png)
-
-
+![excel plan de pruebas](public/IMAGES/5.png)
+p
 ### Ejercicio 1 :
-![ejercicio 1](Public/GIF/1.gif)
+![ejercicio 1](public/GIF/1.gif)
 ### Ejercicio 2 :
-![ejercicio 2](Public/GIF/2.gif)
+![ejercicio 2](public/GIF/2.gif)
 
 ### Ejercicio 3 :
-![ejercicio 3](Public/GIF/3.gif)
+![ejercicio 3](public/GIF/3.gif)
 
 ### Ejercicio 4 :
 
-![ejercicio 4](Public/GIF/4.gif)
+![ejercicio 4](public/GIF/4.gif)
 
 ### Ejercicio 5 :
-![ejercicio 5 ](Public/GIF/5.gif)
+![ejercicio 5 ](public/GIF/5.gif)
